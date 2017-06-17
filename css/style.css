@@ -47,7 +47,7 @@ html {
     line-height: 1.4;
     font-family: 'Raleway', sans-serif;
 }
-
+/*HEADER*/
 .page-header {
   background: #000;
   height: 40px;
@@ -55,16 +55,18 @@ html {
 .page-logo {
   float: left;
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   text-decoration: none;
   line-height: 40px;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
 }
 .page-logo span {
   color: rgba(0, 200, 170, 1);
+  font-weight: 700;
 }
+/*HEADER NAVIGATION*/
 .page-nav {
   float: right;
 }
@@ -85,6 +87,7 @@ html {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
+  font-size: 13px;
 }
 .page-nav-sublist {
   position: absolute;
@@ -92,12 +95,14 @@ html {
   left: -20px;
   background: #000;
   width: 150px;
-  padding: 10px 0;
+  padding: 2px 0;
   visibility: hidden;
   opacity: 0;
   transition: 0.5s opacity, 0.5s top;
 }
-.page-nav-sublist:before { /* trójkąt na górze menu zrobiony za pomocą stylowania border. Alternetywnie można zrobić rotate kwadratu o 45 stopni*/
+/* trójkąt na górze menu zrobiony za pomocą stylowania border.
+ Alternetywnie można zrobić rotate kwadratu o 45 stopni*/
+.page-nav-sublist:before {
   content: '';
   width: 0;
   height: 0;
@@ -121,5 +126,141 @@ html {
 .page-nav li:hover .page-nav-sublist {
   opacity: 1;
   visibility: visible;
-  top: 55px;
+  top: 51px;
+  z-index: 999;
+}
+.page-nav li:hover .page-nav-sublist:hover .page-nav-sublist {
+  opacity: 1;
+  visibility: visible;
+  top: 51px;
+}
+/*SLIDER*/
+.main-slider {
+height: 400px;
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+
+}
+
+.slide p {
+  box-sizing: content-box;
+  text-align: center;
+  font-size: 14px;
+  margin: 20px 10px 20px 10px;
+}
+
+.slide h2 span {
+  color: rgba(0, 200, 170, 1);
+  font-weight: 700;
+}
+
+.slide h2 {
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.slide a {
+  display: block;
+  width: 250px;
+  height: 50px;
+  background-color: rgba(0, 200, 170, 1);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 5px;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  font-weight: 500;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+.main-slider-cnt {
+  position: relative;
+  height: 400px;
+}
+.main-slider-cnt-slides {
+  position: relative;
+  height: 400px;
+}
+.main-slider-cnt-prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgba(255,255,255,0);
+  border: 0;
+  font-size: 60px;
+  color: rgba(0, 200, 170, 1);
+  z-index: 999;
+}
+.main-slider-cnt-next {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgba(255,255,255,0);
+  border: 0;
+  font-size: 60px;
+  color: rgba(0, 200, 170, 1);
+  z-index: 999;
+}
+.main-slider-cnt-img {
+  position: absolute;
+  top: 18%;
+}
+
+.slide {
+  position: absolute;
+  top: 30%;
+  right: 13%;
+  width: 40%
+}
+/*FEATURES*/
+
+/*OFFER*/
+
+/*FOOTER*/
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(255,255,255);
+}
+.footer-content {
+  padding: 30px 0 40px 0;
+}
+.footer-content-socialmedia {
+  padding: 0 30px 0 30px;
+}
+.footer-content-logo {
+  padding: 0 0 0 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  color: #404040;
+}
+.footer-content-logo span {
+  font-weight: 700;
+}
+.footer-content > *,.right-content > *, .footer-content-socialmedia > * {
+  display: inline-block;
+}
+.footer-content-socialmedia img {
+  width: 25px;
+  height: 25px;
+}
+.left-content {
+  float: left;
+  font-size: 13px;
+}
+.right-content {
+  float: right;
 }
